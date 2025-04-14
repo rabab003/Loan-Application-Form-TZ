@@ -1,6 +1,7 @@
 
 import './App.css'
 import Form from './Components/Form'
+import Modal from './Components/Modal'
 
 function App() {
 
