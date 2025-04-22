@@ -109,7 +109,7 @@ import React, { useState } from 'react'
 import Modal  from './Modal'
 import MyInputComponent from './MyInputComponent'
 
-export default function Form({title}) {
+export default function Form() {
 
 const [errorMessage,setErrorMessage ] = useState(null)
 const [showModal ,setShowModal] = useState(false)
@@ -162,7 +162,7 @@ function hideTheModal(){
 
 return (
         <div className='flex items-center justify-center flex-col w-full h-full mx-3' onClick={hideTheModal}>
-            {title}
+            
             <form className='flex items-center w-full justify-center flex-col py-12'>
 
                 <MyInputComponent 
@@ -175,21 +175,8 @@ return (
                 handelChange={handelCheckMobileNumberInput} 
                 value={dataForm.phoneNumber}/>
    
-               
-                {/* <div className='flex flex-col text-center my-3'>
-                    <label className='font-semibold text-[#757185]'>Age :</label>
-                    <input 
-                        value={dataForm.age} 
-                        onChange={(eve) => setDataForm({...dataForm, age: eve.target.value})} 
-                        type="number" 
-                        className='rounded-2xl bg-amber-50 outline-none py-1 px-3 w-full' 
-                    />
-                </div> */}
-
-                <MyInputComponent
-                inputName="Age:"
-                value={dataForm.age}
-                handelChange={handelCheckAgeInput}
+                <MyInputComponent inputName="Age:"
+                value={dataForm.age} handelChange={handelCheckAgeInput}
                 />
 
                 <div>
