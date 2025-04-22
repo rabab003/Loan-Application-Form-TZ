@@ -143,8 +143,14 @@ function handelCheckNameInput(value){
     setDataForm({...dataForm,name:value})
 
 }
+
 function handelCheckMobileNumberInput(value){
     setDataForm({...dataForm,phoneNumber:value})
+
+}
+
+function handelCheckAgeInput(value){
+    setDataForm({...dataForm,age:value})
 
 }
 
@@ -170,7 +176,7 @@ return (
                 value={dataForm.phoneNumber}/>
    
                
-                <div className='flex flex-col text-center my-3'>
+                {/* <div className='flex flex-col text-center my-3'>
                     <label className='font-semibold text-[#757185]'>Age :</label>
                     <input 
                         value={dataForm.age} 
@@ -178,7 +184,14 @@ return (
                         type="number" 
                         className='rounded-2xl bg-amber-50 outline-none py-1 px-3 w-full' 
                     />
-                </div>
+                </div> */}
+
+                <MyInputComponent
+                inputName="Age:"
+                value={dataForm.age}
+                handelChange={handelCheckAgeInput}
+                />
+
                 <div>
                     <label className='font-semibold text-[#757185]'>Are you employee :</label>
                     <input 
@@ -188,6 +201,7 @@ return (
                         onChange={handelChecked} 
                     />
                 </div>
+
                 <div className='py-3'>
                     <label>Salary :</label>
                     <select 
@@ -199,6 +213,7 @@ return (
                         <option>More than 500$</option>
                     </select>
                 </div>
+
                 <button onClick={handleFormSubmit} className={`text-white py-1 px-6 rounded-2xl 
                 ${submitActive ? "bg-amber-300": "bg-emerald-500"}`} 
                 disabled={submitActive} >
